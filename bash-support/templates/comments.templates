@@ -21,20 +21,41 @@
 #
 #          FILE: |FILENAME|
 #
-#         USAGE: ./|FILENAME|
+#         USAGE: ./|FILENAME| [-h]
 #
 #   DESCRIPTION:
 #
-#       OPTIONS: ---
+#       OPTIONS:
+#                  -h: Print the usage and exit
 #  REQUIREMENTS: ---
 #         NOTES: ---
-#        AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
-#  ORGANIZATION: |ORGANIZATION|
-#       CREATED: |DATE| |TIME|
-#      REVISION:  ---
+#        AUTHOR: |AUTHOR| <|EMAIL|>
 #===============================================================================
 
 set -Eeuo pipefail
+
+usage() {
+    # Print the usage and exit
+    echo "|FILENAME|"
+    echo "Usage: |FILENAME| [-h]"
+    echo "    -h: print the usage and exit"
+    echo
+    exit "$1"
+}
+
+while getopts "h" option; do
+    case "${option}" in
+        h)
+            usage 0
+            ;;
+        *)
+            printf "Unknown option %s\n" "${option}"
+            usage 1
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
 <CURSOR>
 == ENDTEMPLATE ==
 
@@ -59,12 +80,12 @@ set -Eeuo pipefail
 	'MAIN SCRIPT'             : 'MAIN SCRIPT',
 	'STATISTICS AND CLEAN-UP' : 'STATISTICS AND CLEAN-UP',
 == LIST: comments_keywords == hash ==
-	'bug'         : ':BUG:|DATE| |TIME|:|AUTHORREF|: <CURSOR>',
-	'todo'        : ':TODO:|DATE| |TIME|:|AUTHORREF|: <CURSOR>',
-	'tricky'      : ':TRICKY:|DATE| |TIME|:|AUTHORREF|: <CURSOR>',
-	'warning'     : ':WARNING:|DATE| |TIME|:|AUTHORREF|: <CURSOR>',
-	'workaround'  : ':WORKAROUND:|DATE| |TIME|:|AUTHORREF|: <CURSOR>',
-	'new keyword' : ':<CURSOR>:|DATE| |TIME|:|AUTHORREF|: {+COMMENT+}',
+	'bug'         : ':BUG:|DATE| |TIME|: <CURSOR>',
+	'todo'        : ':TODO:|DATE| |TIME|: <CURSOR>',
+	'tricky'      : ':TRICKY:|DATE| |TIME|: <CURSOR>',
+	'warning'     : ':WARNING:|DATE| |TIME|: <CURSOR>',
+	'workaround'  : ':WORKAROUND:|DATE| |TIME|: <CURSOR>',
+	'new keyword' : ':<CURSOR>:|DATE| |TIME|: {+COMMENT+}',
 == LIST: comments_macros == hash ==
 	'AUTHOR'       : '|AUTHOR|',
 	'AUTHORREF'    : '|AUTHORREF|',

@@ -2,11 +2,11 @@
 §  User Macros
 § =============================================================
 
-SetMacro( 'AUTHOR',      'YOUR NAME' )
+SetMacro( 'AUTHOR',      'Elliott Indiran' )
 SetMacro( 'AUTHORREF',   '' )
 SetMacro( 'COMPANY',     '' )
 SetMacro( 'COPYRIGHT',   '' )
-SetMacro( 'EMAIL',       '' )
+SetMacro( 'EMAIL',       'elliott.indiran@protonmail.com' )
 SetMacro( 'LICENSE',     '' )
 SetMacro( 'ORGANIZATION','' )
 
