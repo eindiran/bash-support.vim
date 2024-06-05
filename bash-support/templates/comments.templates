@@ -30,6 +30,9 @@
 #  REQUIREMENTS: ---
 #         NOTES: ---
 #        AUTHOR: |AUTHOR| <|EMAIL|>
+#       CREATED: |DATE|
+#      REVISION: |SEMVER_REV|
+#
 #===============================================================================
 
 set -Eeuo pipefail
@@ -93,6 +96,7 @@ shift $((OPTIND-1))
 	'COPYRIGHT'    : '|COPYRIGHT|',
 	'EMAIL'        : '|EMAIL|',
 	'ORGANIZATION' : '|ORGANIZATION|',
+	'SEMVER_REV'   : '|SEMVER_REV|',
 == ENDLIST ==
 
 § -------------------------------------------------------------

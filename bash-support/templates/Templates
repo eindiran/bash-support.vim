@@ -2,15 +2,16 @@
 §  User Macros
 § =============================================================
 
-SetMacro( 'AUTHOR',      'Elliott Indiran' )
-SetMacro( 'AUTHORREF',   '' )
-SetMacro( 'COMPANY',     '' )
-SetMacro( 'COPYRIGHT',   '' )
-SetMacro( 'EMAIL',       'elliott.indiran@protonmail.com' )
-SetMacro( 'LICENSE',     '' )
-SetMacro( 'ORGANIZATION','' )
+SetMacro( 'AUTHOR',       'Elliott Indiran' )
+SetMacro( 'AUTHORREF',    '' )
+SetMacro( 'COMPANY',      '' )
+SetMacro( 'COPYRIGHT',    '' )
+SetMacro( 'EMAIL',        'elliott.indiran@protonmail.com' )
+SetMacro( 'LICENSE',      '' )
+SetMacro( 'ORGANIZATION', '' )
+SetMacro( 'SEMVER_REV',   '1.0.0' )
 
-SetFormat( 'DATE', '%x' )
+SetFormat( 'DATE', '%Y-%m-%d' )
 SetFormat( 'TIME', '%H:%M' )
 SetFormat( 'YEAR', '%Y' )
 
