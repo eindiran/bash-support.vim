@@ -23,6 +23,10 @@
 #
 #         USAGE: ./|FILENAME| [-h]
 #
+#      EXAMPLES:
+#                  |FILENAME| -h  --> Print the usage and exit.
+#                  |FILENAME|     -->
+#
 #   DESCRIPTION:
 #
 #       OPTIONS:
@@ -66,6 +70,7 @@ shift $((OPTIND-1))
 
 == Comments.date == insert, map:cd, sc:d ==
 |DATE|<CURSOR>
+
 == Comments.date+time == insert, map:ct, sc:t ==
 |DATE| |TIME|<CURSOR>
 == ENDTEMPLATE ==
