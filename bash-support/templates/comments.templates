@@ -23,14 +23,15 @@
 #
 #         USAGE: ./|FILENAME| [-h]
 #
-#      EXAMPLES:
-#                  |FILENAME| -h  --> Print the usage and exit.
-#                  |FILENAME|     -->
-#
 #   DESCRIPTION:
 #
 #       OPTIONS:
 #                  -h: Print the usage and exit
+#
+#      EXAMPLES:
+#                  |FILENAME| -h  --> Print the usage and exit.
+#                  |FILENAME|     -->
+#
 #  REQUIREMENTS: ---
 #         NOTES: ---
 #        AUTHOR: |AUTHOR| <|EMAIL|>
@@ -43,10 +44,8 @@ set -Eeuo pipefail
 
 usage() {
     # Print the usage and exit
-    echo "|FILENAME|"
-    echo "Usage: |FILENAME| [-h]"
-    echo "    -h: print the usage and exit"
-    echo
+    cat <<EOF
+EOF
     exit "$1"
 }
 
@@ -62,6 +61,11 @@ while getopts "h" option; do
     esac
 done
 shift $((OPTIND-1))
+
+if [[ $# -gt 0 ]]; then
+    # Positional arguments
+    ;
+fi
 
 <CURSOR>
 == ENDTEMPLATE ==
